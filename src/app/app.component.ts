@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MDCRipple } from '@material/ripple';
+
 
 @Component({
   selector: 'app-root',
