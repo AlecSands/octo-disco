@@ -8,7 +8,7 @@ export default {
 
 export const Primary: Story = () => ({
   props: {
-    label: 'Button',
+    text: 'Button',
     primary: true,
   },
 });
