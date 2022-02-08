@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MDCRipple } from '@material/ripple';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-button',
@@ -11,31 +12,31 @@ export class ButtonComponent implements OnInit {
   count = 0;
   buttonRipple: any;
 
-  constructor() { }
+  constructor(private logger: LoggerService) { }
 
   ngOnChanges(): void {
     this.count++;
-    console.log(`on changes running: ${this.count}`)
-    console.log(`input value: ${this.text}`);
+    this.logger.log(`on changes running: ${this.count}`)
+    this.logger.log(`input value: ${this.text}`);
   }
 
   ngOnInit(): void {
-    console.log(`on init running`);
+    this.logger.log(`on init running`);
     this.trySelectingDom();
   }
 
   buttonClick(): void {
-    console.log('button click');
+    this.logger.log('button click');
   }
 
   trySelectingDom(): void {
     try {
       const buttonSelected = document.querySelector('.mdc-button') as HTMLElement;
-      console.log(buttonSelected);
+      this.logger.log(buttonSelected);
       this.buttonRipple = new MDCRipple(buttonSelected);
 
     } catch (error) {
-      console.error(error);
+      this.logger.error(error);
 
     }
   }
