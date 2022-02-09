@@ -8,7 +8,7 @@ import { LoggerService } from '../logger.service';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  @Input() text = '';
+  @Input() text = 'placeholder';
   count = 0;
   buttonRipple: any;
 

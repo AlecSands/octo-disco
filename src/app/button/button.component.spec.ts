@@ -5,18 +5,21 @@ import { ButtonComponent } from './button.component';
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
+  let compiled: HTMLElement;
 
-  it('should be defined when created', () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({declarations: [ButtonComponent]});
     fixture = TestBed.createComponent(ButtonComponent);
+    fixture.detectChanges();
     component = fixture.componentInstance;
+    compiled = fixture.nativeElement as HTMLElement;
+  });
+
+  it('should be defined when created', () => {
     expect(component).toBeDefined();
   });
 
-  // it('should create', () => {
-  //   TestBed.configureTestingModule({declarations: [BannerComponent]});
-  //   const fixture = TestBed.createComponent(BannerComponent);
-  //   const component = fixture.componentInstance;
-  //   expect(component).toBeDefined();
-  // });
+  it('should contain "placeholder" as button label', () => {
+    expect(compiled.querySelector('button')?.textContent).toContain('placeholder');
+  });
 });
