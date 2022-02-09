@@ -6,20 +6,17 @@ describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
+  it('should be defined when created', () => {
+    TestBed.configureTestingModule({declarations: [ButtonComponent]});
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    expect(component).toBeDefined();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   TestBed.configureTestingModule({declarations: [BannerComponent]});
+  //   const fixture = TestBed.createComponent(BannerComponent);
+  //   const component = fixture.componentInstance;
+  //   expect(component).toBeDefined();
+  // });
 });
