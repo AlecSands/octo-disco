@@ -1,1 +1,9 @@
 @use "@material/typography/mdc-typography";
+
+@mixin text-theme($theme-color: DarkGray) {
+  color: $theme-color;
+}
+
+h2 {
+  @include text-theme;
+}
