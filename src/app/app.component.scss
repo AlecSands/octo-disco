@@ -1,9 +1,6 @@
 @use "@material/typography/mdc-typography";
-
-@mixin text-theme($theme-color: DarkGray) {
-  color: $theme-color;
-}
+@use "../assets/variables" as v;
 
 h2 {
-  @include text-theme;
+  @include v.text-theme;
 }
